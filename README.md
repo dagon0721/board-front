@@ -2,7 +2,7 @@
 
 App.tsx에서 return안에 있는거 싹다 지우시고 아래 컴포넌트 주석 단위로 복사해서 붙여놓고 확인해보시기 바랍니다.
 
-//보드 리스트 아이템
+    //보드 리스트 아이템
     // <>
     //   {latestBoardListMock.map((boardListItem) => (
     //     <BoardItem boardListItem={boardListItem} />
