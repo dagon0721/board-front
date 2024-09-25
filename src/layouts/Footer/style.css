@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "GimhaeGayaR";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/GimhaeGayaR.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 #footer {
   min-width: 1200px;
   padding: 40px 0 50px 0;
@@ -28,7 +36,7 @@
 
 .footer-logo-text {
   color: rgba(255, 255, 255, 1);
-  font-family: "GimhaeGaya";
+  font-family: "GimhaeGayaR", sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 140%;
