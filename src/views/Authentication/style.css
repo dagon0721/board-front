@@ -6,20 +6,53 @@
   font-style: normal;
 }
 
+@keyframes backgroundChange {
+  0% {
+    opacity: 1;
+    background-image: url("/src/assets/image/auth-bg/auth-background1.png");
+  }
+  16.67% {
+    opacity: 1;
+    background-image: url("/src/assets/image/auth-bg/auth-background2.png");
+  }
+  33.33% {
+    opacity: 1;
+    background-image: url("/src/assets/image/auth-bg/auth-background3.png");
+  }
+  50% {
+    opacity: 1;
+    background-image: url("/src/assets/image/auth-bg/auth-background4.png");
+  }
+  66.67% {
+    opacity: 1;
+    background-image: url("/src/assets/image/auth-bg/auth-background5.png");
+  }
+  83.33% {
+    opacity: 1;
+    background-image: url("/src/assets/image/auth-bg/auth-background6.png");
+  }
+  100% {
+    opacity: 1;
+    background-image: url("/src/assets/image/auth-bg/auth-background1.png");
+  }
+}
+
 #auth-wrapper {
   padding: 100px 0px 150px;
   min-width: 1440px;
   height: calc(100vh - 68px - 100px - 150px);
-  min-height: 800px;
+  min-height: 860px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-image: url("/src/assets/image/auth-bg/auth-background3.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+
+  animation: backgroundChange 45s infinite;
+  transition: opacity 1.5s ease-in-out;
 }
 
 .auth-container {
@@ -36,27 +69,37 @@
   height: 100%;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
 }
 
 .auth-jumbotron-contents {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   flex-direction: column;
+  gap: 20px;
   height: 100%;
 }
 
 .auth-logo-icon {
-  width: 100px;
-  height: 100px;
-
+  width: 150px;
+  height: 150px;
   background-image: url("/src/assets/image/logo-light.png");
   background-position: center;
   background-size: contain;
   filter: brightness(0) invert(1);
+  margin-bottom: -20px;
+}
+
+.auth-jumbotron-text {
+  font-family: "GimhaeGayaR", sans-serif;
+  color: rgba(255, 255, 255, 1);
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 140%;
+  letter-spacing: -0.8px;
+  text-align: center;
 }
 
 .auth-jumbotron-text-box {
@@ -66,14 +109,12 @@
   gap: 12px;
 }
 
-.auth-jumbotron-text {
-  font-family: "GimhaeGayaR", sans-serif;
-  color: rgba(255, 255, 255, 1);
-
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: -1.2px;
+.auth-jumbotron-text-box .auth-jumbotron-text:last-child {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: #ffcc00;
+  text-align: center;
 }
 
 .auth-card {
