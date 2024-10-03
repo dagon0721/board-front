@@ -232,21 +232,34 @@ export default function Header() {
   useEffect(() => {
     const isAuthPage = pathname.startsWith(AUTH_PATH());
     setAuthPage(isAuthPage);
+
     const isMainPage = pathname === MAIN_PATH();
     setMainPage(isMainPage);
+
     const isSearchPage = pathname.startsWith(SEARCH_PATH(""));
     setSearchPage(isSearchPage);
-    const isBoardDetailPage = pathname.startsWith(
-      BOARD_PATH() + "/" + BOARD_DETAIL_PATH("")
-    );
+
+    // const isBoardDetailPage = pathname.startsWith(
+    //   BOARD_PATH() + "/" + BOARD_DETAIL_PATH("")
+    // );
+    // setBoardDetailPage(isBoardDetailPage);
+    // const isBoardWritePage = pathname.startsWith(
+    //   BOARD_PATH() + "/" + BOARD_WRITE_PATH()
+    // );
+
+    const boardDetailRegex = new RegExp(`${BOARD_PATH()}/detail/\\d+`);
+    const isBoardDetailPage = boardDetailRegex.test(pathname);
     setBoardDetailPage(isBoardDetailPage);
-    const isBoardWritePage = pathname.startsWith(
-      BOARD_PATH() + "/" + BOARD_WRITE_PATH()
-    );
+
+    // setBoardWritePage(isBoardWritePage);
+    // const isBoardUpdatePage = pathname.startsWith(
+    //   BOARD_PATH() + "/" + BOARD_UPDATE_PATH("")
+    // );
+
+    const isBoardWritePage =
+      pathname === `${BOARD_PATH()}/${BOARD_WRITE_PATH()}`;
     setBoardWritePage(isBoardWritePage);
-    const isBoardUpdatePage = pathname.startsWith(
-      BOARD_PATH() + "/" + BOARD_UPDATE_PATH("")
-    );
+
     setBoardUpdatePage(isBoardUpdatePage);
     const isUserPage = pathname.startsWith(USER_PATH(""));
     setUserPage(isUserPage);
